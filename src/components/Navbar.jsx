@@ -59,10 +59,8 @@ export default function Navbar() {
         initial={{ y: -72, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-        className={`fixed inset-x-0 top-0 z-[70] transition-all duration-500 ${
-          scrolled
-            ? "bg-ink-950/80 backdrop-blur-xl border-b border-white/[0.06]"
-            : "bg-transparent border-b border-transparent"
+        className={`rgb-hairline fixed inset-x-0 top-0 z-[70] transition-all duration-500 ${
+          scrolled ? "hairline-on bg-ink-950/80 backdrop-blur-xl" : "bg-transparent"
         }`}
       >
         <nav
@@ -76,7 +74,7 @@ export default function Navbar() {
             onClick={() => goTo("#home")}
             className="group flex items-center gap-2.5"
           >
-            <span className="grid h-9 w-9 place-items-center rounded-lg border border-accent/30 bg-accent/10 font-display text-sm font-bold text-accent-soft transition-colors duration-300 group-hover:bg-accent/20">
+            <span className="grid h-9 w-9 place-items-center rounded-lg border border-white/15 bg-white/[0.05] font-display text-sm font-bold text-zinc-100 shadow-[0_0_18px_-6px_rgba(139,0,255,0.6)] transition-shadow duration-300 group-hover:shadow-[0_0_22px_-6px_rgba(255,0,168,0.7)]">
               {personal.monogram}
             </span>
             <span className="hidden sm:block font-display text-lg font-semibold tracking-tight text-zinc-100">
@@ -92,7 +90,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`link-underline rounded-md px-3.5 py-2 text-sm font-medium transition-colors duration-300 ${
                   active === link.href
-                    ? "is-active text-accent-soft"
+                    ? "is-active text-zinc-50"
                     : "text-zinc-400 hover:text-zinc-100"
                 }`}
               >
@@ -105,7 +103,7 @@ export default function Navbar() {
             <Magnetic strength={0.15} className="hidden sm:inline-flex">
               <a
                 href={`mailto:${personal.email}`}
-                className="group inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-5 py-2 text-sm font-semibold text-accent-soft transition-all duration-300 hover:bg-accent hover:text-ink-950 hover:shadow-glow-sm"
+                className="group inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-ink-900/70 px-5 py-2 text-sm font-semibold text-zinc-100 transition-all duration-300 hover:border-white/25 hover:text-white hover:shadow-[0_0_30px_-10px_rgba(255,0,168,0.55)]"
               >
                 Let's Talk
                 <ArrowUpRight
@@ -120,7 +118,7 @@ export default function Navbar() {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-zinc-200 transition-colors hover:border-accent/40 hover:text-accent-soft lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-zinc-200 transition-colors hover:border-white/25 hover:text-white lg:hidden"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -159,7 +157,7 @@ export default function Navbar() {
                       onClick={() => goTo(link.href)}
                       className={`flex items-center justify-between rounded-xl px-4 py-3.5 text-base font-medium transition-colors ${
                         active === link.href
-                          ? "bg-accent/10 text-accent-soft"
+                          ? "bg-white/[0.06] text-white"
                           : "text-zinc-300 hover:bg-white/[0.04] hover:text-zinc-50"
                       }`}
                     >
@@ -173,7 +171,7 @@ export default function Navbar() {
                 <a
                   href={`mailto:${personal.email}`}
                   onClick={() => setOpen(false)}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink-950"
+                  className="btn-primary w-full"
                 >
                   Let's Talk
                 </a>

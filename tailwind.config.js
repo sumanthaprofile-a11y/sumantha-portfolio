@@ -11,9 +11,9 @@ export default {
           700: "#161a23",
         },
         accent: {
-          DEFAULT: "#38bdf8",
-          soft: "#7dd3fc",
-          deep: "#0284c7",
+          DEFAULT: "#B05CFF",
+          soft: "#D78BFF",
+          deep: "#7B2FFF",
         },
       },
       fontFamily: {

@@ -10,12 +10,12 @@ export default function Certification() {
         <SectionHeading eyebrow="Certification" title="Credentials." />
 
         <Reveal className="mx-auto max-w-2xl">
-          <div className="group relative flex items-center gap-5 overflow-hidden rounded-3xl border border-white/8 bg-ink-800/50 p-7 backdrop-blur-sm transition-all duration-500 hover:border-accent/25 hover:shadow-card">
+          <div className="group relative flex items-center gap-5 overflow-hidden rounded-3xl border border-white/8 bg-ink-800/50 p-7 backdrop-blur-sm transition-[border-color,box-shadow] duration-500 hover:border-white/20 hover:shadow-card">
             <div
               aria-hidden
-              className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/[0.06] blur-2xl transition-opacity duration-500 group-hover:opacity-150"
+              className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#8B00FF]/[0.08] blur-2xl transition-opacity duration-500 group-hover:opacity-150"
             />
-            <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl border border-accent/25 bg-accent/[0.08] text-accent-soft transition-all duration-500 group-hover:scale-105 group-hover:border-accent/40">
+            <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl border border-[#8B00FF]/25 bg-[#8B00FF]/[0.07] text-[#C084FC] transition-all duration-500 group-hover:scale-105 group-hover:border-[#C084FC]/40">
               <Medal className="h-8 w-8" strokeWidth={1.5} />
             </span>
             <div>

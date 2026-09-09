@@ -9,6 +9,7 @@ import {
 import { ArrowRight, BadgeCheck, ChevronDown, Sparkles } from "lucide-react";
 import { personal } from "../data/portfolio";
 import { EASE } from "../lib/animations";
+import { conicGradient } from "../lib/rgb";
 import ProfileImage from "../components/ProfileImage";
 import Magnetic from "../components/Magnetic";
 
@@ -85,21 +86,21 @@ export default function Hero() {
         >
           <motion.div variants={item} className="flex items-center gap-2">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs font-medium tracking-wide text-zinc-300">
-              <Sparkles className="h-3.5 w-3.5 text-accent" />
+              <Sparkles className="h-3.5 w-3.5 text-[#C084FC]" />
               FULL STACK DEVELOPER
             </span>
           </motion.div>
 
           <h1 className="mt-6 font-display text-[2.6rem] leading-[1.05] font-bold tracking-tight text-zinc-50 sm:text-6xl lg:text-[4.2rem] xl:text-[4.6rem]">
             <AnimatedLine>
-              Hi, I'm <span className="text-gradient">Sumantha.</span>
+              Hi, I'm <span className="rgb-text">Sumantha.</span>
             </AnimatedLine>
             <AnimatedLine className="mt-1">
               <span className="text-zinc-300">I build digital</span>
             </AnimatedLine>
             <AnimatedLine className="mt-1">
               <span className="text-zinc-300">experiences that </span>
-              <span className="text-gradient">work.</span>
+              <span className="rgb-text">work.</span>
             </AnimatedLine>
           </h1>
 
@@ -152,22 +153,40 @@ export default function Hero() {
             style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
             className="relative h-[420px] w-[320px] sm:h-[480px] sm:w-[370px] lg:h-[520px] lg:w-[400px]"
           >
-            {/* glow */}
-            <div
-              aria-hidden
-              className="absolute -inset-10 -z-10 rounded-full bg-accent/12 blur-3xl"
-            />
-            {/* rotating gradient ring */}
+            {/* ambient crossfade glow */}
+            <div aria-hidden className="absolute -inset-12 -z-10">
+              <div
+                className="rgb-fade-a absolute inset-0 rounded-full blur-2xl"
+                style={{
+                  background:
+                    "radial-gradient(circle, rgba(255,0,168,0.28), transparent 65%)",
+                }}
+              />
+              <div
+                className="rgb-fade-b absolute inset-0 rounded-full blur-2xl"
+                style={{
+                  background:
+                    "radial-gradient(circle, rgba(0,217,255,0.25), transparent 65%)",
+                }}
+              />
+              <div
+                className="rgb-fade-c absolute inset-0 rounded-full blur-2xl"
+                style={{
+                  background:
+                    "radial-gradient(circle, rgba(255,106,0,0.22), transparent 65%)",
+                }}
+              />
+            </div>
+            {/* rotating RGB ring */}
             <div
               aria-hidden
               className="absolute -inset-[3px] overflow-hidden rounded-[2rem]"
             >
               <div
-                className="absolute left-[-50%] top-[-50%] h-[200%] w-[200%] animate-spin opacity-70"
+                className="absolute left-[-50%] top-[-50%] h-[200%] w-[200%] opacity-70"
                 style={{
-                  animationDuration: "9s",
-                  background:
-                    "conic-gradient(from 0deg, transparent 0%, rgba(56,189,248,0.9) 8%, transparent 22%, transparent 58%, rgba(125,211,252,0.6) 72%, transparent 88%)",
+                  background: conicGradient(0),
+                  animation: "rgb-spin 14s linear infinite",
                 }}
               />
             </div>
@@ -185,8 +204,8 @@ export default function Hero() {
               />
               <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-xl border border-white/10 bg-ink-950/70 px-4 py-3 backdrop-blur-md">
                 <div className="flex items-center gap-2.5">
-                  <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent/15">
-                    <BadgeCheck className="h-4 w-4 text-accent-soft" />
+                  <span className="grid h-8 w-8 place-items-center rounded-lg bg-white/[0.07]">
+                    <BadgeCheck className="h-4 w-4 text-zinc-200" />
                   </span>
                   <div>
                     <p className="text-sm font-semibold text-zinc-100">
@@ -210,7 +229,7 @@ export default function Hero() {
         aria-label="Scroll to explore"
         className="absolute bottom-7 left-1/2 z-10 -translate-x-1/2"
       >
-        <span className="flex flex-col items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.25em] text-zinc-500 transition-colors hover:text-accent-soft">
+        <span className="flex flex-col items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.25em] text-zinc-500 transition-colors hover:text-white">
           Scroll to explore
           <motion.span
             animate={{ y: [0, 6, 0] }}

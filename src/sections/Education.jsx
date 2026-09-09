@@ -32,12 +32,12 @@ export default function Education() {
                 },
               }}
               whileHover={{ y: -6 }}
-              className={`group relative flex flex-col rounded-3xl border border-white/8 bg-ink-800/40 p-7 backdrop-blur-sm transition-[border-color,background-color,box-shadow] duration-500 hover:border-accent/25 hover:shadow-card ${
+              className={`group relative flex flex-col rounded-3xl border border-white/8 bg-ink-800/40 p-7 backdrop-blur-sm transition-[border-color,background-color,box-shadow] duration-500 hover:border-white/20 hover:shadow-card ${
                 i === 0 ? "md:col-span-1 row-span-1" : ""
               }`}
             >
               <div className="flex items-center justify-between">
-                <span className="grid h-11 w-11 place-items-center rounded-xl border border-accent/20 bg-accent/[0.07] text-accent-soft transition-transform duration-500 group-hover:scale-110">
+                <span className="grid h-11 w-11 place-items-center rounded-xl border border-white/12 bg-white/[0.05] text-zinc-200 transition-transform duration-500 group-hover:scale-110 group-hover:text-white">
                   <GraduationCap className="h-6 w-6" strokeWidth={1.75} />
                 </span>
                 {edu.current && (
@@ -54,7 +54,7 @@ export default function Education() {
               <p className="mt-1.5 text-sm text-zinc-400">{edu.institution}</p>
 
               <div className="mt-auto flex items-center justify-between pt-6">
-                <span className="text-xs font-medium uppercase tracking-wider text-accent">
+                <span className="text-xs font-medium uppercase tracking-wider text-zinc-500">
                   {edu.period}
                 </span>
                 <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-semibold text-zinc-200">

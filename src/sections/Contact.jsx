@@ -40,7 +40,7 @@ export default function Contact() {
                 <a
                   href={personal.socials.linkedin}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="group btn-ghost"
                 >
                   <Linkedin className="h-4 w-4" />
@@ -51,7 +51,7 @@ export default function Contact() {
                 <a
                   href={personal.socials.github}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="group btn-ghost"
                 >
                   <Github className="h-4 w-4" />
@@ -65,7 +65,7 @@ export default function Contact() {
                 Prefer a quick call?{" "}
                 <a
                   href={personal.phoneHref}
-                  className="link-underline font-medium text-zinc-300 hover:text-accent-soft"
+                  className="link-underline font-medium text-zinc-300 hover:text-white"
                 >
                   {personal.phone}
                 </a>

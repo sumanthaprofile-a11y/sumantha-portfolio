@@ -29,8 +29,8 @@ export default function Experience() {
             className="absolute left-[13px] top-2 bottom-2 w-px origin-top sm:left-[15px]"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(56,189,248,0.25), rgba(56,189,248,0.95))",
-              boxShadow: "0 0 12px rgba(56,189,248,0.35)",
+                "linear-gradient(to bottom, rgba(139,0,255,0.25), rgba(255,0,168,0.85))",
+              boxShadow: "0 0 14px rgba(139,0,255,0.35)",
             }}
           />
 
@@ -47,14 +47,21 @@ export default function Experience() {
                 {/* dot */}
                 <span
                   aria-hidden
-                  className="absolute left-0 top-1.5 grid h-7 w-7 place-items-center rounded-full border border-accent/40 bg-ink-900 sm:h-8 sm:w-8"
+                  className="absolute left-0 top-1.5 grid h-7 w-7 place-items-center rounded-full border border-white/15 bg-ink-900 sm:h-8 sm:w-8"
                 >
-                  <span className="h-2 w-2 rounded-full bg-accent shadow-glow-sm transition-transform duration-300 group-hover:scale-125" />
+                  <span
+                    className="h-2 w-2 rounded-full transition-transform duration-300 group-hover:scale-125"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #ff00a8, #8b00ff, #0066ff, #00d9ff)",
+                      boxShadow: "0 0 14px rgba(139,0,255,0.6)",
+                    }}
+                  />
                 </span>
 
-                <div className="rounded-2xl border border-white/8 bg-ink-800/40 p-6 backdrop-blur-sm transition-all duration-500 group-hover:border-accent/25 group-hover:bg-ink-800/70 group-hover:shadow-glow-sm md:p-7">
+                <div className="rounded-2xl border border-white/8 bg-ink-800/40 p-6 backdrop-blur-sm transition-[border-color,background-color,box-shadow] duration-500 group-hover:border-white/20 group-hover:bg-ink-800/70 group-hover:shadow-[0_16px_40px_-20px_rgba(139,0,255,0.5)] md:p-7">
                   <div className="flex flex-wrap items-center justify-between gap-2">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-accent">
+                    <p className="text-gradient text-xs font-semibold uppercase tracking-wider">
                       {job.role}
                     </p>
                     <p className="text-xs font-medium text-zinc-500">{job.period}</p>
@@ -67,10 +74,7 @@ export default function Experience() {
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {job.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="chip transition-all duration-300 group-hover:border-white/15 hover:border-accent/40 hover:text-accent-soft"
-                      >
+                      <span key={tech} className="chip">
                         {tech}
                       </span>
                     ))}

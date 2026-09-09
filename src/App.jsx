@@ -1,3 +1,4 @@
+import { MotionConfig } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CursorGlow from "./components/CursorGlow";
@@ -17,11 +18,12 @@ import Contact from "./sections/Contact";
 
 export default function App() {
   return (
-    <div className="noise relative min-h-screen">
-      <Background />
-      <CursorGlow />
-      <ScrollProgress />
-      <Navbar />
+    <MotionConfig reducedMotion="user">
+      <div className="noise relative min-h-screen">
+        <Background />
+        <CursorGlow />
+        <ScrollProgress />
+        <Navbar />
 
       <main className="relative z-10">
         <Hero />
@@ -44,6 +46,7 @@ export default function App() {
       </main>
 
       <Footer />
-    </div>
+      </div>
+    </MotionConfig>
   );
 }

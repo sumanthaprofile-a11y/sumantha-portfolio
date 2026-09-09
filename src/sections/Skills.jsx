@@ -46,10 +46,10 @@ export default function Skills() {
                   },
                 }}
                 whileHover={{ y: -6 }}
-                className="group rounded-3xl border border-white/8 bg-ink-800/40 p-6 backdrop-blur-sm transition-[border-color,background-color,box-shadow] duration-500 hover:border-accent/25 hover:bg-ink-800/70 hover:shadow-card"
+                className="group rounded-3xl border border-white/8 bg-ink-800/40 p-6 backdrop-blur-sm transition-[border-color,background-color,box-shadow] duration-500 hover:border-white/20 hover:bg-ink-800/70 hover:shadow-card"
               >
                 <div className="flex items-center gap-3">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-accent/20 bg-accent/[0.07] text-accent-soft transition-all duration-500 group-hover:scale-110 group-hover:bg-accent/15">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-white/12 bg-white/[0.05] text-zinc-200 transition-all duration-500 group-hover:scale-110 group-hover:border-white/25 group-hover:bg-white/[0.1] group-hover:text-white">
                     <Icon className="h-6 w-6" strokeWidth={1.75} />
                   </span>
                   <h3 className="font-display text-lg font-semibold text-zinc-100">
@@ -59,11 +59,7 @@ export default function Skills() {
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   {category.items.map((skill) => (
-                    <span
-                      key={skill}
-                      tabIndex={0}
-                      className="chip cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent/[0.07] hover:text-accent-soft"
-                    >
+                    <span key={skill} tabIndex={0} className="chip cursor-default">
                       {skill}
                     </span>
                   ))}
@@ -77,8 +73,8 @@ export default function Skills() {
             <div className="mt-2 rounded-2xl border border-dashed border-white/10 bg-white/[0.01] p-6 text-center">
               <p className="text-sm text-zinc-400">
                 Always learning — currently exploring{" "}
-                <span className="font-medium text-accent-soft">cloud</span> and{" "}
-                <span className="font-medium text-accent-soft">security</span>{" "}
+                <span className="font-medium text-zinc-200">cloud</span> and{" "}
+                <span className="font-medium text-zinc-200">security</span>{" "}
                 engineering.
               </p>
             </div>

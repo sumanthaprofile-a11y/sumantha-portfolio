@@ -22,8 +22,8 @@ export const personal = {
     "Computer Science graduate and Full Stack Developer focused on building modern web applications, automation solutions, and security-focused projects.",
   // Social links — update the URLs below with your real profiles.
   socials: {
-    linkedin: "https://www.linkedin.com/in/your-linkedin-username",
-    github: "https://github.com/your-github-username",
+    linkedin: "https://linkedin.com/in/sumantha-narayana-m-6b2a05257",
+    github: "https://github.com/SumanthaNarayanaM",
   },
 };
 
@@ -38,7 +38,7 @@ export const navLinks = [
 
 export const about = {
   paragraphs: [
-    "I'm a Computer Science graduate from Vivekananda College of Engineering & Technology with a strong focus on building reliable, modern web applications. My work spans full stack development, RPA automation, and security-focused projects — from client platforms deployed in production to tools that simplify day-to-day processes.",
+    "I'm a Computer Science graduate from Vivekananda College of Engineering & Technology with a strong focus on building reliable, modern web applications. My work spans full stack development, RPA automation, and security focused projects from client platforms deployed in production to tools that simplify day to day processes.",
     "As a freelance full stack developer, I've taken ideas from a blank canvas to live products: designing responsive frontends, building robust backend services, and managing database architecture end to end.",
     "I care about clean code, thoughtful UX, and shipping things that actually work. When I'm not coding, you'll find me on the cricket field or practicing karate.",
   ],
@@ -100,6 +100,7 @@ export const projects = [
   {
     number: "03",
     title: "Temple Website",
+    link: "https://effortless-faun-10914a.netlify.app/",
     date: "Jan 2026",
     description:
       "Developed a responsive temple website using React.js to provide information about temple history and services.",
@@ -107,6 +108,15 @@ export const projects = [
     features: ["e-Kanike QR", "Seva List", "Responsive UI", "Vercel"],
     highlight: "Web",
     icon: "landmark",
+  },
+  {
+    number: "04",
+    title: "PurseTrack - Personal Finance Tracker",
+    link: "https://personal-wallet-tracker-two.vercel.app/login",
+    description:
+      "A personal finance tracker web application designed to help users manage and monitor their personal finances through a clean and intuitive interface.",
+    tags: [],
+    highlight: "Personal Finance / Full Stack Web Application",
   },
 ];
 

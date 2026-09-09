@@ -2,6 +2,136 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   RGB ACCENT SYSTEM
+   ============================================================ */
+:root {
+  --rgb-1: #ff004c;
+  --rgb-2: #ff00a8;
+  --rgb-3: #8b00ff;
+  --rgb-4: #0066ff;
+  --rgb-5: #00d9ff;
+  --rgb-6: #00ff9d;
+  --rgb-7: #b6ff00;
+  --rgb-8: #ffd000;
+  --rgb-9: #ff6a00;
+  --rgb-gradient: linear-gradient(
+    115deg,
+    #ff004c 0%,
+    #ff00a8 11%,
+    #8b00ff 22%,
+    #0066ff 33%,
+    #00d9ff 44%,
+    #00ff9d 55%,
+    #b6ff00 66%,
+    #ffd000 77%,
+    #ff6a00 88%,
+    #ff004c 100%
+  );
+}
+
+@keyframes gradient-pan {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes rgb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rgb-drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(34px, -26px, 0) scale(1.14);
+  }
+}
+
+@keyframes rgb-drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.1);
+  }
+  50% {
+    transform: translate3d(-30px, 22px, 0) scale(0.96);
+  }
+}
+
+@keyframes rgb-drift-c {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18px, 30px, 0) scale(1.08);
+  }
+}
+
+@keyframes rgb-crossfade-a {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.08;
+  }
+}
+
+@keyframes rgb-crossfade-b {
+  0%,
+  100% {
+    opacity: 0.08;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* Static RGB gradient text (subtle, non-animated) */
+.text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    #ff00a8 0%,
+    #8b00ff 30%,
+    #0066ff 55%,
+    #00d9ff 80%,
+    #00ff9d 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animated RGB gradient text (slow, elegant sweep) */
+.rgb-text {
+  background-image: linear-gradient(
+    100deg,
+    #ff004c 0%,
+    #ff00a8 12%,
+    #8b00ff 24%,
+    #0066ff 36%,
+    #00d9ff 48%,
+    #00ff9d 60%,
+    #b6ff00 72%,
+    #ffd000 84%,
+    #ff6a00 100%,
+    #ff004c 115%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 14s ease-in-out infinite alternate;
+}
+
 @layer base {
   :root {
     color-scheme: dark;
@@ -17,8 +147,8 @@
   }
 
   ::selection {
-    background: rgba(56, 189, 248, 0.25);
-    color: #f8fafc;
+    background: rgba(255, 0, 168, 0.28);
+    color: #fafafa;
   }
 
   * {
@@ -41,7 +171,7 @@
   }
 
   :where(a, button, input, textarea, select):focus-visible {
-    outline: 2px solid rgba(56, 189, 248, 0.8);
+    outline: 2px solid rgba(139, 0, 255, 0.85);
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -56,29 +186,232 @@
     @apply py-24 md:py-32;
   }
 
-  .text-gradient {
-    @apply bg-gradient-to-r from-white via-accent-soft to-accent bg-clip-text text-transparent;
-  }
-
   .eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.3em] text-accent;
+    @apply text-[11px] font-semibold uppercase tracking-[0.3em];
+    background-image: linear-gradient(
+      100deg,
+      #ff00a8 0%,
+      #8b00ff 40%,
+      #0066ff 75%,
+      #00d9ff 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .surface {
     @apply bg-ink-800/60 border border-white/8 backdrop-blur-sm;
   }
 
+  /* ---------- Buttons ---------- */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-ink-950 transition-all duration-300 hover:shadow-glow-sm hover:brightness-110 active:scale-[0.98];
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.9rem 1.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #0a0c10;
+    background-color: #f4f4f5;
+    box-shadow: inset 0 0 0 1px rgba(10, 12, 16, 0.07);
+    transition:
+      box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.2s ease;
+  }
+  .btn-primary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background-image: var(--rgb-gradient);
+    background-size: 220% 100%;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn-primary:hover::before {
+    opacity: 1;
+    animation: gradient-pan 5s ease-in-out infinite alternate;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 12px 40px -12px rgba(255, 0, 168, 0.45);
+  }
+  .btn-primary:active {
+    transform: scale(0.98);
   }
 
   .btn-ghost {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.02] px-7 py-3.5 text-sm font-medium text-zinc-100 transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 hover:text-accent-soft active:scale-[0.98];
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 9999px;
+    padding: 0.9rem 1.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #e4e4e7;
+    background-color: rgba(255, 255, 255, 0.02);
+    transition:
+      color 0.4s ease,
+      border-color 0.4s ease,
+      box-shadow 0.4s ease,
+      transform 0.2s ease;
+  }
+  .btn-ghost::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background-image: var(--rgb-gradient);
+    background-size: 220% 100%;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn-ghost:hover::before {
+    opacity: 0.22;
+    animation: gradient-pan 6s ease-in-out infinite alternate;
+  }
+  .btn-ghost:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 0 30px -14px rgba(0, 217, 255, 0.5);
+  }
+  .btn-ghost:active {
+    transform: scale(0.98);
   }
 
+  /* ---------- Chips / badges ---------- */
   .chip {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium text-zinc-300 transition-all duration-300;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #d4d4d8;
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
   }
+  .chip::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background-image: var(--rgb-gradient);
+    background-size: 220% 100%;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+  }
+  .chip:hover {
+    transform: translateY(-2px);
+    color: #fafafa;
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 24px -14px rgba(139, 0, 255, 0.6);
+  }
+  .chip:hover::before {
+    opacity: 0.16;
+    animation: gradient-pan 6s ease-in-out infinite alternate;
+  }
+}
+
+/* ---------- Animated underline ---------- */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 100%;
+  background-image: linear-gradient(
+    90deg,
+    #ff00a8,
+    #8b00ff,
+    #0066ff,
+    #00d9ff
+  );
+  background-size: 200% 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover::after,
+.link-underline.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---------- Navbar RGB hairline ---------- */
+.rgb-hairline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    90deg,
+    #ff004c,
+    #ff00a8,
+    #8b00ff,
+    #0066ff,
+    #00d9ff,
+    #00ff9d,
+    #b6ff00,
+    #ffd000,
+    #ff6a00,
+    #ff004c
+  );
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.rgb-hairline.hairline-on::after {
+  opacity: 0.38;
+  animation: gradient-pan 12s linear infinite alternate;
+}
+
+/* ---------- Background blob ---------- */
+.bg-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ---------- Hero ambient crossfade layers ---------- */
+.rgb-fade-a {
+  animation: rgb-crossfade-a 13s ease-in-out infinite;
+}
+.rgb-fade-b {
+  animation: rgb-crossfade-b 13s ease-in-out -6.5s infinite;
+}
+.rgb-fade-c {
+  animation: rgb-crossfade-a 13s ease-in-out -3.2s infinite;
 }
 
 /* ---------- Background grid ---------- */
@@ -100,28 +433,6 @@
   pointer-events: none;
   opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* ---------- Animated underline ---------- */
-.link-underline {
-  position: relative;
-}
-.link-underline::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 1px;
-  background: rgba(56, 189, 248, 0.7);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.link-underline:hover::after,
-.link-underline.is-active::after {
-  transform: scaleX(1);
-  transform-origin: left;
 }
 
 /* ---------- Accessibility: reduced motion ---------- */

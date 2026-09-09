@@ -28,7 +28,7 @@ export default function Workshop() {
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-zinc-400 md:text-lg">
                   {workshop.text}
                 </p>
-                <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/[0.07] px-4 py-2 text-sm font-medium text-accent-soft">
+                <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#8B00FF]/25 bg-[#8B00FF]/[0.07] px-4 py-2 text-sm font-medium text-[#C084FC]">
                   <Presentation className="h-4 w-4" />
                   {workshop.topic}
                 </div>
@@ -41,7 +41,7 @@ export default function Workshop() {
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 className="flex items-center justify-center gap-6 rounded-3xl border border-white/8 bg-ink-900/60 p-8"
               >
-                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-accent/20 bg-accent/[0.08] text-accent-soft">
+                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-[#8B00FF]/20 bg-[#8B00FF]/[0.08] text-[#C084FC]">
                   <Users className="h-7 w-7" strokeWidth={1.5} />
                 </span>
                 <div>

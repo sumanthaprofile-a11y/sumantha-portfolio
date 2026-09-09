@@ -26,25 +26,25 @@ export default function Footer() {
           <a
             href={`mailto:${personal.email}`}
             aria-label="Email"
-            className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-zinc-400 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent-soft"
+            className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-zinc-400 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/25 hover:text-white hover:shadow-[0_10px_30px_-12px_rgba(139,0,255,0.6)]"
           >
             <Mail className="h-4 w-4" />
           </a>
           <a
             href={personal.socials.linkedin}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-zinc-400 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent-soft"
+            className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-zinc-400 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/25 hover:text-white hover:shadow-[0_10px_30px_-12px_rgba(0,217,255,0.6)]"
           >
             <Linkedin className="h-4 w-4" />
           </a>
           <a
             href={personal.socials.github}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="GitHub"
-            className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-zinc-400 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent-soft"
+            className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-zinc-400 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/25 hover:text-white hover:shadow-[0_10px_30px_-12px_rgba(255,106,0,0.6)]"
           >
             <Github className="h-4 w-4" />
           </a>

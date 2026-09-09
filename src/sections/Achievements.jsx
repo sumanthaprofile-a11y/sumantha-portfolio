@@ -40,9 +40,9 @@ export default function Achievements() {
                   },
                 }}
                 whileHover={{ y: -6 }}
-                className="group flex items-start gap-4 rounded-2xl border border-white/8 bg-ink-800/40 p-6 backdrop-blur-sm transition-[border-color,background-color,box-shadow] duration-500 hover:border-accent/25 hover:bg-ink-800/70"
+                className="group flex items-start gap-4 rounded-2xl border border-white/8 bg-ink-800/40 p-6 backdrop-blur-sm transition-[border-color,background-color,box-shadow] duration-500 hover:border-white/20 hover:bg-ink-800/70"
               >
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-accent/20 bg-accent/[0.07] text-accent-soft transition-transform duration-500 group-hover:scale-110">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-[#8B00FF]/25 bg-[#8B00FF]/[0.07] text-[#C084FC] transition-transform duration-500 group-hover:scale-110">
                   <Icon className="h-5 w-5" strokeWidth={1.75} />
                 </span>
                 <div>

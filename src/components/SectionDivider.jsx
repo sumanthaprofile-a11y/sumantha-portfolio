@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { viewportOnce } from "../lib/animations";
+import { conicGradient } from "../lib/rgb";
 
 export default function SectionDivider() {
   return (
@@ -12,7 +13,13 @@ export default function SectionDivider() {
         className="flex items-center justify-center gap-3"
       >
         <span className="h-px w-16 bg-gradient-to-r from-transparent to-white/15 sm:w-28" />
-        <span className="h-1.5 w-1.5 rounded-full bg-accent/60 shadow-glow-sm" />
+        <span
+          className="h-1.5 w-1.5 rounded-full"
+          style={{
+            background: conicGradient(0),
+            boxShadow: "0 0 14px rgba(139,0,255,0.5), 0 0 22px rgba(0,217,255,0.25)",
+          }}
+        />
         <span className="h-px w-16 bg-gradient-to-l from-transparent to-white/15 sm:w-28" />
       </motion.div>
     </div>

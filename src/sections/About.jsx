@@ -32,11 +32,14 @@ export default function About() {
                 </h3>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {about.focusAreas.map((area) => (
-                    <span
-                      key={area}
-                      className="chip group gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent/[0.06] hover:text-accent-soft"
-                    >
-                      <span className="h-1.5 w-1.5 rounded-full bg-accent/70 transition-colors group-hover:bg-accent" />
+                    <span key={area} className="chip gap-2">
+                      <span
+                        className="h-1.5 w-1.5 rounded-full"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, #ff00a8, #8b00ff, #00d9ff)",
+                        }}
+                      />
                       {area}
                     </span>
                   ))}
@@ -55,7 +58,7 @@ export default function About() {
           >
             <div
               aria-hidden
-              className="absolute -inset-6 -z-10 rounded-3xl bg-accent/[0.05] blur-2xl"
+              className="absolute -inset-6 -z-10 rounded-3xl bg-[#8B00FF]/[0.06] blur-2xl"
             />
             <div className="grid grid-cols-2 gap-4 rounded-3xl border border-white/8 bg-ink-800/50 p-5 backdrop-blur-sm shadow-card">
               {about.stats.map((stat, i) => (
@@ -70,7 +73,7 @@ export default function About() {
                       transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
                     },
                   }}
-                  className="group flex flex-col gap-1.5 rounded-2xl border border-white/8 bg-ink-900/60 p-5 transition-colors duration-300 hover:border-accent/30"
+                  className="group flex flex-col gap-1.5 rounded-2xl border border-white/8 bg-ink-900/60 p-5 transition-colors duration-300 hover:border-white/20"
                 >
                   <StatCounter
                     value={stat.value}
@@ -86,8 +89,8 @@ export default function About() {
               variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.45 } } }}
               className="mt-4 flex items-center gap-3 rounded-2xl border border-white/8 bg-ink-800/50 p-4 backdrop-blur-sm"
             >
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-accent/12">
-                <Briefcase className="h-5 w-5 text-accent-soft" />
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/[0.06]">
+                <Briefcase className="h-5 w-5 text-zinc-300" />
               </span>
               <div>
                 <p className="text-sm font-semibold text-zinc-200">{personal.role}</p>
