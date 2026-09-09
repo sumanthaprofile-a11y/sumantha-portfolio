@@ -67,7 +67,18 @@ export default function Experience() {
                     <p className="text-xs font-medium text-zinc-500">{job.period}</p>
                   </div>
                   <h3 className="mt-1.5 font-display text-xl font-semibold text-zinc-50">
-                    {job.company}
+                    {job.link ? (
+                      <a
+                        href={job.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors duration-300 hover:text-white"
+                      >
+                        {job.company}
+                      </a>
+                    ) : (
+                      job.company
+                    )}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-zinc-400 md:text-[15px]">
                     {job.description}

@@ -15,7 +15,7 @@ export const personal = {
   phoneHref: "tel:+916363844121",
   location: "Puttur, Karnataka, India",
   // Change this path to point to your own photo.
-  image: "/images/profile.jpg",
+  image: "/images/profile.png",
   imageAlt: "Portrait of Sumantha Narayana M",
   availability: "Available for opportunities",
   heroIntro:
@@ -60,6 +60,7 @@ export const about = {
 export const experience = [
   {
     company: "Roadstrack.com",
+    link: "https://roadstrack.com/",
     role: "Freelance Full Stack Developer",
     period: "Apr 2026 — Present",
     description:
