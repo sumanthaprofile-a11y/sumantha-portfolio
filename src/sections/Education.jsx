@@ -40,12 +40,6 @@ export default function Education() {
                 <span className="grid h-11 w-11 place-items-center rounded-xl border border-white/12 bg-white/[0.05] text-zinc-200 transition-transform duration-500 group-hover:scale-110 group-hover:text-white">
                   <GraduationCap className="h-6 w-6" strokeWidth={1.75} />
                 </span>
-                {edu.current && (
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/20 bg-emerald-400/[0.07] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    In Progress
-                  </span>
-                )}
               </div>
 
               <h3 className="mt-5 font-display text-lg font-semibold leading-snug text-zinc-50">
